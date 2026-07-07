@@ -1,0 +1,28 @@
+{
+    "alert_name": "DBReplicationFailure",
+    "category": "CUCM Database",
+    "severity": "Critical",
+
+    "summary": "Database replication between CUCM cluster nodes has changed from Good to Bad. Configuration changes may not replicate correctly across the cluster.",
+
+    "possible_causes": [
+        "Network connectivity issue",
+        "Informix replication service issue",
+        "Database corruption",
+        "NTP synchronization issue",
+        "High CPU or memory utilization"
+    ],
+
+    "validation_commands": [
+        "utils dbreplication runtimestate",
+        "utils dbreplication status",
+        "utils diagnose test",
+        "show network cluster"
+    ],
+
+    "customer_impact": "Configuration changes may not replicate across cluster nodes. Cluster health is degraded.",
+
+    "recommendation": "Validate database replication immediately. Verify network connectivity and NTP synchronization before restarting any services.",
+
+    "jira": "Investigated DBReplicationFailure RTMT alert. Verified replication status, database services, and cluster communication. Further monitoring is in progress."
+}
