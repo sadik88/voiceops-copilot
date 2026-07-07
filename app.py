@@ -28,6 +28,8 @@ def rtmt():
 
         alert_name = detect_alert(alert_text)
 
+        print("Detected Alert:", alert_name)
+
         if alert_name:
             result = load_alert(alert_name)
 
